@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Tourist Attraction</title>
+</head>
+<body>
+<h1>Delete An Attraction</h1>
+<form th:action="@{/attractions/delete/}" method="get">
+    <label for="deleteAttractionName">Attraction Name:</label>
+    <input type="text" id="deleteAttractionName" name="name" required>
+    <button type="submit">Delete</button>
+</form>
+<hr>
+<h2>Search Attractions</h2>
+<form th:action="@{/attractions/delete/{name}(name=${attraction.name})}" method="get">
+    <label for="searchQuery">Search Attractions:</label>
+    <input type="text" id="searchQuery" name="query">
+    <button type="submit">Search</button>
+</form>
+<h2>Search Results</h2>
+<ul>
+    <li th:each="attraction : ${searchResults}" th:text="${attraction.name}"></li>
+</ul>
+
+</body>
+</html>

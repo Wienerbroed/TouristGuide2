@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Tourist Attraction</title>
+</head>
+<body>
+<h1> Add An Attraction</h1>
+<form th:action="@{/attractions/add}" method="post" th:object="${newAttraction}">
+<label>Name: </label>
+<input type="text" th:field="*{name}" required>
+<label>Description: </label>
+<input type="text" th:field="*{description}" required>
+    <button type="submit">Add Attraction</button>
+
+</form>
+</body>
+</html>
