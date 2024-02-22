@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attractions</title>
+</head>
+<body>
+<h1>Tourist Attractions</h1>
+<ul>
+    <li th:each="attraction : ${attractions}" th:text="${attraction.name}"></li>
+</ul>
+</body>
+</html>
